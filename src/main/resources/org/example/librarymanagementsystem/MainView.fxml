@@ -22,6 +22,11 @@
                         <Button text="Add Book" onAction="#showAddBookView" styleClass="button"/>
                     </children>
                 </HBox>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Button text="Remove Book" onAction="#showRemoveBookView" styleClass="button"/>
+                    </children>
+                </HBox>
             </children>
         </VBox>
     </children>
