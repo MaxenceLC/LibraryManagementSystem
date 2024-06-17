@@ -4,18 +4,44 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.librarymanagementsystem.controller.AddBookController">
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.example.librarymanagementsystem.controller.AddBookController">
+    <children>
+        <Label text="Add a New Book" style="-fx-font-size: 24px;" />
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <children>
+                <Label text="Title:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <TextField fx:id="titleField" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                <Label text="Author:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <TextField fx:id="authorField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                <Label text="ISBN:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <TextField fx:id="isbnField" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+                <Label text="Genre:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                <TextField fx:id="genreField" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+                <Label text="Publication Year:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                <TextField fx:id="yearField" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+            </children>
+        </GridPane>
+        <HBox spacing="10" alignment="CENTER">
+            <children>
+                <Button text="Add Book" onAction="#handleAddBook" />
+                <Button text="Cancel" onAction="#handleCancel" />
+            </children>
+        </HBox>
+    </children>
     <padding>
-        <Insets top="10" right="10" bottom="10" left="10"/>
+        <Insets top="20" right="20" bottom="20" left="20" />
     </padding>
-    <vgap>10</vgap>
-    <hgap>10</hgap>
-
-    <Label text="Title:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-    <TextField fx:id="titleField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-    <Label text="Author:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-    <TextField fx:id="authorField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-    <Button text="Add Book" onAction="#addBook" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-</GridPane>
+</VBox>
