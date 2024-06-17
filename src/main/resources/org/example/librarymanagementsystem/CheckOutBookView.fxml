@@ -5,22 +5,23 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.example.librarymanagementsystem.controller.CheckOutReturnBookController">
     <children>
-        <Label text="Check Out / Return Book" styleClass="label-title" />
-        <GridPane hgap="10" vgap="10">
-            <children>
-                <Label text="ISBN:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
-                <TextField fx:id="isbnField" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+        <Label text="Check Out / Return Book" style="-fx-font-family: Arial; -fx-font-size: 24px; -fx-font-weight: bold;" />  <VBox spacing="20">  <GridPane hgap="10" vgap="15">  <children>
+        <Label text="ISBN:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-text-alignment: RIGHT;" />
+        <TextField fx:id="isbnField" GridPane.rowIndex="0" GridPane.columnIndex="1" style="-fx-padding: 5px;" />
 
-                <Label text="User ID:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
-                <TextField fx:id="userIdField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
-            </children>
-        </GridPane>
-        <Button text="Check Out Book" onAction="#handleCheckOutBook" />
-        <Button text="Return Book" onAction="#handleReturnBook" />
+        <Label text="User ID:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-text-alignment: RIGHT;" />
+        <TextField fx:id="userIdField" GridPane.rowIndex="1" GridPane.columnIndex="1" style="-fx-padding: 5px;" promptText="Enter User ID here" />
+    </children>
+    </GridPane>
+        <HBox spacing="10">
+            <Button text="Check Out Book" onAction="#handleCheckOutBook" style="-fx-padding: 10px; -fx-border-color: transparent;" />  <Button text="Return Book" onAction="#handleReturnBook" style="-fx-padding: 10px; -fx-border-color: transparent;" />
+        </HBox>
+    </VBox>
     </children>
     <padding>
         <Insets top="20" right="20" bottom="20" left="20" />
