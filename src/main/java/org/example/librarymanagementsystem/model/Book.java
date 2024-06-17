@@ -7,6 +7,7 @@ public class Book {
     private String genre;
     private int publicationYear;
     private boolean isCheckedOut;
+    private String userId;
 
     public Book(String title, String author, String isbn, String genre, int publicationYear, boolean isCheckedOut) {
         this.title = title;
@@ -15,9 +16,11 @@ public class Book {
         this.genre = genre;
         this.publicationYear = publicationYear;
         this.isCheckedOut = isCheckedOut;
+        this.userId = null;  // Assuming default userId is null when a book is created
     }
 
-    // Getters and setters
+    // Getters and setters for all fields
+
     public String getTitle() {
         return title;
     }
@@ -62,7 +65,15 @@ public class Book {
         return isCheckedOut;
     }
 
-    public void setCheckedOut(boolean isCheckedOut) {
-        this.isCheckedOut = isCheckedOut;
+    public void setCheckedOut(boolean checkedOut) {
+        isCheckedOut = checkedOut;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

@@ -34,6 +34,17 @@
                 </HBox>
             </children>
         </VBox>
+        <HBox alignment="CENTER">
+            <children>
+                <Button text="Check Out Book" onAction="#showCheckOutBookView" styleClass="button"/>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER">
+            <children>
+                <Button text="Return Book" onAction="#showReturnBookView" styleClass="button"/>
+            </children>
+        </HBox>
+
     </children>
     <padding>
         <Insets top="20" right="20" bottom="20" left="20" />

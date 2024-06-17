@@ -47,4 +47,22 @@ public class MainController {
             e.printStackTrace();
         }
     }
+    @FXML
+    private void showCheckOutBookView() throws Exception {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/librarymanagementsystem/CheckOutBookView.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(fxmlLoader.load()));
+        stage.setTitle("Check Out Book");
+        stage.show();
+    }
+
+    @FXML
+    private void showReturnBookView() throws Exception {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/librarymanagementsystem/ReturnBookView.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(fxmlLoader.load()));
+        stage.setTitle("Return Book");
+        stage.show();
+    }
+
 }

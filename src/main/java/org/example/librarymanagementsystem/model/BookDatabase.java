@@ -14,13 +14,12 @@ import java.util.List;
 
 public class BookDatabase {
     private static final String FILE_PATH = "src/main/resources/org/example/librarymanagementsystem/books.json";
-    private static ObservableList<Book> books = FXCollections.observableArrayList();
+    private static List<Book> books = new ArrayList<>();
 
     static {
         try (FileReader reader = new FileReader(FILE_PATH)) {
-            Type bookListType = new TypeToken<ArrayList<Book>>(){}.getType();
-            List<Book> bookList = new Gson().fromJson(reader, bookListType);
-            books.setAll(bookList);
+            Type bookListType = new TypeToken<ArrayList<Book>>() {}.getType();
+            books = new Gson().fromJson(reader, bookListType);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -28,23 +27,32 @@ public class BookDatabase {
 
     public static void addBook(Book book) {
         books.add(book);
-        saveBooks();
+        saveBooksToFile();
+    }
+
+    public static void removeBook(Book book) {
+        books.remove(book);
+        saveBooksToFile();
     }
 
     public static ObservableList<Book> getBooks() {
-        return books;
+        return FXCollections.observableArrayList(books);
     }
 
-    public static void saveBooks() {
+    public static Book getBookByISBN(String isbn) {
+        for (Book book : books) {
+            if (book.getIsbn().equals(isbn)) {
+                return book;
+            }
+        }
+        return null;
+    }
+
+    public static void saveBooksToFile() {
         try (FileWriter writer = new FileWriter(FILE_PATH)) {
             new Gson().toJson(new ArrayList<>(books), writer);
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void removeBook(Book book) {
-        books.remove(book);
-        saveBooks();
     }
 }

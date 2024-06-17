@@ -36,6 +36,7 @@ public class RemoveBookController {
         Book selectedBook = bookTable.getSelectionModel().getSelectedItem();
         if (selectedBook != null) {
             BookDatabase.removeBook(selectedBook);
+            bookData.remove(selectedBook);
         }
     }
 }

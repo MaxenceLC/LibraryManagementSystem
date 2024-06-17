@@ -36,17 +36,20 @@ public class SearchBookController {
 
     @FXML
     private void handleSearchBook() {
-        String query = searchField.getText().toLowerCase();
-        ObservableList<Book> result = FXCollections.observableArrayList();
+        String searchText = searchField.getText().toLowerCase();
+        ObservableList<Book> searchResults = FXCollections.observableArrayList();
 
         for (Book book : BookDatabase.getBooks()) {
-            if (book.getTitle().toLowerCase().contains(query) ||
-                    book.getAuthor().toLowerCase().contains(query) ||
-                    book.getIsbn().toLowerCase().contains(query)) {
-                result.add(book);
+            if (book.getTitle().toLowerCase().contains(searchText) ||
+                    book.getAuthor().toLowerCase().contains(searchText) ||
+                    book.getIsbn().toLowerCase().contains(searchText)) {
+                searchResults.add(book);
             }
         }
 
-        bookTable.setItems(result);
+        if (searchResults.isEmpty()) {
+            bookTable.setPlaceholder(new javafx.scene.control.Label("No books found."));
+        }
+        bookTable.setItems(searchResults);
     }
 }
