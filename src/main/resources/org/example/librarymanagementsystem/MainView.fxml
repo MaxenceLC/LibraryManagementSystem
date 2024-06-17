@@ -7,19 +7,19 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.example.librarymanagementsystem.controller.MainController" spacing="20">
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.example.librarymanagementsystem.controller.MainController" spacing="20" styleClass="vbox-main">
     <children>
         <VBox alignment="TOP_CENTER" spacing="10">
             <children>
-                <Label text="Bienvenue à la bibliothèque de Maxence !" style="-fx-font-size: 18px;" />
-                <Label text="Que souhaitez-vous faire aujourd'hui ?" style="-fx-font-size: 14px;" />
+                <Label text="Bienvenue dans la bibliothèque de Maxence !" styleClass="label-title"/>
+                <Label text="Que souhaitez-vous faire aujourd'hui ?" styleClass="label-title"/>
             </children>
         </VBox>
         <VBox alignment="CENTER" spacing="20">
             <children>
                 <HBox alignment="CENTER">
                     <children>
-                        <Button text="Add Book" onAction="#showAddBookView" />
+                        <Button text="Add Book" onAction="#showAddBookView" styleClass="button"/>
                     </children>
                 </HBox>
             </children>
