@@ -27,6 +27,11 @@
                         <Button text="Remove Book" onAction="#showRemoveBookView" styleClass="button"/>
                     </children>
                 </HBox>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Button text="Search Book" onAction="#showSearchBookView" styleClass="button"/>
+                    </children>
+                </HBox>
             </children>
         </VBox>
     </children>
