@@ -6,12 +6,10 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.example.librarymanagementsystem.controller.SearchBookController">
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.example.librarymanagementsystem.controller.SearchBookController" spacing="10" alignment="CENTER">
     <children>
         <Label text="Search Books" style="-fx-font-size: 24px;" />
         <HBox spacing="10" alignment="CENTER">
@@ -20,11 +18,11 @@
                 <Button text="Search" onAction="#handleSearchBook" />
             </children>
         </HBox>
-        <TableView fx:id="bookTable" prefHeight="200" prefWidth="300">
+        <TableView fx:id="bookTable" prefHeight="200" prefWidth="400">
             <columns>
-                <TableColumn fx:id="titleColumn" text="Title" />
-                <TableColumn fx:id="authorColumn" text="Author" />
-                <TableColumn fx:id="isbnColumn" text="ISBN" />
+                <TableColumn fx:id="titleColumn" text="Title" prefWidth="130" />
+                <TableColumn fx:id="authorColumn" text="Author" prefWidth="130" />
+                <TableColumn fx:id="isbnColumn" text="ISBN" prefWidth="130" />
             </columns>
         </TableView>
     </children>

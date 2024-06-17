@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.example.librarymanagementsystem.controller.AddBookController" fx:id="addBookView" styleClass="add-book-view">
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.example.librarymanagementsystem.controller.AddBookController" spacing="20" alignment="CENTER">
     <children>
-        <Label text="Add a New Book" styleClass="label-title" />
-        <GridPane hgap="10" vgap="10">
+        <Label text="Add a New Book" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+        <GridPane hgap="10" vgap="10" alignment="CENTER">
             <columnConstraints>
-                <ColumnConstraints />
-                <ColumnConstraints />
+                <ColumnConstraints minWidth="100" />
+                <ColumnConstraints minWidth="200" />
             </columnConstraints>
             <children>
                 <Label text="Title:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
@@ -36,8 +36,8 @@
         </GridPane>
         <HBox spacing="10" alignment="CENTER">
             <children>
-                <Button text="Add Book" onAction="#handleAddBook" styleClass="button"/>
-                <Button text="Cancel" onAction="#handleCancel" styleClass="button"/>
+                <Button text="Add Book" onAction="#handleAddBook" style="-fx-padding: 10; -fx-font-size: 14px;" />
+                <Button text="Cancel" onAction="#handleCancel" style="-fx-padding: 10; -fx-font-size: 14px;" />
             </children>
         </HBox>
     </children>

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.example.librarymanagementsystem.controller.MainController" spacing="20" styleClass="vbox-main">
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.example.librarymanagementsystem.controller.MainController" spacing="20" styleClass="vbox-main" prefWidth="600" prefHeight="400">
     <children>
         <VBox alignment="TOP_CENTER" spacing="10">
             <children>
