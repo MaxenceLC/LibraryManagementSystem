@@ -1,6 +1,7 @@
 package org.example.librarymanagementsystem.controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import org.example.librarymanagementsystem.model.Book;
 import org.example.librarymanagementsystem.model.BookDatabase;
@@ -41,10 +42,18 @@ public class CheckOutReturnBookController {
     }
 
     private void showConfirmationMessage(String message) {
-        // Implementation to show confirmation message
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     private void showErrorMessage(String message) {
-        // Implementation to show error message
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
